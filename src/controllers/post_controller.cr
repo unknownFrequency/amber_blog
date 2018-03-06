@@ -1,7 +1,7 @@
 class PostController < ApplicationController
   def index
     posts = Post.all
-    render("index.slang")
+    render("index.ecr")
   end
 
   def show

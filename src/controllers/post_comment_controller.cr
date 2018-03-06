@@ -19,6 +19,7 @@ class PostCommentController < ApplicationController
   end
 
   def create
+    post_comment_params.inspect
     post_comment = PostComment.new(post_comment_params.validate!)
 
     if post_comment.valid? && post_comment.save

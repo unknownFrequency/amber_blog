@@ -31,16 +31,16 @@ Amber::Server.configure do |app|
   end
 
   routes :web do
-      get "/profile", UserController, :show
-  get "/profile/edit", UserController, :edit
-  patch "/profile", UserController, :update
-  get "/signin", SessionController, :new
-  post "/session", SessionController, :create
-  get "/signout", SessionController, :delete
-  get "/signup", RegistrationController, :new
-  post "/registration", RegistrationController, :create
-      resources "/post_comments", PostCommentController
-      resources "/posts", PostController
+    get "/profile", UserController, :show
+    get "/profile/edit", UserController, :edit
+    patch "/profile", UserController, :update
+    get "/signin", SessionController, :new
+    post "/session", SessionController, :create
+    get "/signout", SessionController, :delete
+    get "/signup", RegistrationController, :new
+    post "/registration", RegistrationController, :create
+    resources "/post_comments", PostCommentController
+    resources "/posts", PostController
     get "/", HomeController, :index
   end
 end

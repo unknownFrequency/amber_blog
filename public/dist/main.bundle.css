@@ -76,4 +76,8 @@ h6, .h6 {
   #logo {
     display: none; } }
 
+#post-body {
+  border-left: 4px solid grey;
+  padding: 5px 10px; }
+
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmJ1bmRsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

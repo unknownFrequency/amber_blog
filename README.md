@@ -1,4 +1,4 @@
-# test
+[![Amber Framework](https://img.shields.io/badge/using-amber%20framework-orange.svg)]
 
 This project is powered by [Amber Framework](https://amberframework.org/).
 

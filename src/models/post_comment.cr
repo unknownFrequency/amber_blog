@@ -5,5 +5,6 @@ class PostComment < Granite::ORM::Base
 
   # id : Int64 primary key is created for you
   field body : String
+  field name : String
   timestamps
 end

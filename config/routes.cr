@@ -1,6 +1,5 @@
 Amber::Server.configure do |app|
   pipeline :web, :auth do
-  
     # Plug is the method to use connect a pipe (middleware)
     # A plug accepts an instance of HTTP::Handler
     plug Amber::Pipe::PoweredByAmber.new
@@ -12,7 +11,6 @@ Amber::Server.configure do |app|
     plug Amber::Pipe::CSRF.new
     # Reload clients browsers (development only)
     plug Amber::Pipe::Reload.new if Amber.env.development?
-  
   end
 
   pipeline :auth do
@@ -34,13 +32,14 @@ Amber::Server.configure do |app|
   end
 
   routes :auth do
-    post "/posts", PostController, :create
     get "/posts/new", PostController, :new
     patch "/posts/:id", PostController, :update
     get "/posts/:id/edit", PostController, :edit
+    post "/posts", PostController, :create
   end
 
   routes :web do
+    get "/", PostController, :index
     get "/posts", PostController, :index
     get "/posts/:id", PostController, :show
     get "/profile", UserController, :show
@@ -52,6 +51,5 @@ Amber::Server.configure do |app|
     get "/signup", RegistrationController, :new
     post "/registration", RegistrationController, :create
     resources "/post_comments", PostCommentController
-    get "/", HomeController, :index
   end
 end

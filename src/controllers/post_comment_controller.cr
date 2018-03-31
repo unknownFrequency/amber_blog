@@ -19,12 +19,12 @@ class PostCommentController < ApplicationController
   end
 
   def create
-    post_comment_params.inspect
     post_comment = PostComment.new(post_comment_params.validate!)
+    # post_comment = PostComment.new(post_comment_params.validate!)
 
     if post_comment.valid? && post_comment.save
       flash["success"] = "Created PostComment successfully."
-      redirect_to "/post_comments"
+      redirect_to "/posts/#{post_comment.post_id}"
     else
       flash["danger"] = "Could not create PostComment!"
       render("new.slang")
@@ -69,6 +69,7 @@ class PostCommentController < ApplicationController
     params.validation do
       required(:post_id) { |f| !f.nil? }
       required(:body) { |f| !f.nil? }
+      required(:name) { |f| !f.nil? }
     end
   end
 end

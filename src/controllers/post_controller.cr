@@ -6,7 +6,7 @@ class PostController < ApplicationController
 
   def show
     if post = Post.find params["id"]
-      render("show.ecr")
+      render("show.slang")
     else
       flash["warning"] = "Post with ID #{params["id"]} Not Found"
       redirect_to "/posts"

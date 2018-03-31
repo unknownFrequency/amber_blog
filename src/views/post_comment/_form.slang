@@ -9,6 +9,8 @@
     == label(:post)
     == select_field(name: "post_id", collection: Post.all.map{|post| [post.id, post.id]}, selected: post_comment.post_id, class: "form-control")
   div.form-group
+    == text_area(name: "name", content: post_comment.body, placeholder: "Name", class: "form-control", size: "30x10")
+  div.form-group
     == text_area(name: "body", content: post_comment.body, placeholder: "Body", class: "form-control", size: "30x10")
   == submit("Submit", class: "btn btn-primary btn-xs")
   == link_to("back", "/post_comments", class: "btn btn-default btn-xs")

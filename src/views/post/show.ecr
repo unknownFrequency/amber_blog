@@ -19,16 +19,14 @@
 <% form(action: "/post_comments", method: :post) do %>
   <%= csrf_tag %>
   <div>
-    <%= hidden_field name: "post_id", value: post.id %>
+    <%= hidden_field name: "post_id", value: "#{post.id}" %>
     <div class="form-group">
-    <%= text_field(name: "name", content: "", placeholder: "name", 
-                  class: "form-control", size: "5x1") %>
+      <%= text_field(name: "name", placeholder: "Name", class: "form-control", size: "5x1") %>
     </div>
     <div class="form-group">
-    <%= text_area(name: "body", content: "", placeholder: "Body", 
-                  class: "form-control", size: "5x1") %>
+      <%= text_area(name: "body", content: "",  placeholder: "Body", class: "form-control", size: "5x1") %>
     </div>
     <%= submit("Submit", class: "btn btn-primary btn-xs") %>
-    <%= link_to("back", "/post_comments", class: "btn btn-default btn-xs") %>
+    <%= link_to("Back", "/post_comments", class: "btn btn-default btn-xs") %>
   </div>
 <% end %>
